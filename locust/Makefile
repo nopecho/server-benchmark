@@ -1,8 +1,6 @@
 DC_PATH := $(CURDIR)/docker-compose
-
 SIMPLE_DC_FILE := $(DC_PATH)/docker-compose-simple.yml
 DC_FILE := $(DC_PATH)/docker-compose.yml
-
 HOST ?= http://host.docker.internal
 PORT ?= 8080
 TARGET ?= /
