@@ -6,8 +6,8 @@ services:
     ports:
       - "8089:8089"
     environment:
-      - SIMPLE_HOST=${SIMPLE_HOST}
-      - SIMPLE_URL=${SIMPLE_URL}
+      - LOCUST_HOST=${LOCUST_HOST}
+      - TARGET_PATH=${TARGET_PATH}
     volumes:
       - ../:/locust
     command: -f /locust/get.py

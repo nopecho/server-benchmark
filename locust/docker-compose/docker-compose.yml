@@ -6,7 +6,7 @@ services:
     ports:
       - "8089:8089"
     environment:
-      - LOCUST_HOST=http://host.docker.internal:8080 # localhost == host.docker.internal (localhost of docker host)
+      - LOCUST_HOST=${LOCUST_HOST}
     volumes:
-      - ../.:/locust
-    command: -f /locust/locustfiles --class-picker
+      - ../:/locust
+    command: -f /locust/tests --class-picker
