@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  locust:
+    image: locustio/locust:2.16.1
+    ports:
+      - "8089:8089"
+    environment:
+      - SIMPLE_HOST=${SIMPLE_HOST}
+      - SIMPLE_URL=${SIMPLE_URL}
+    volumes:
+      - ../:/locust
+    command: -f /locust/get.py
