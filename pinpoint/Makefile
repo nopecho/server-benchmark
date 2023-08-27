@@ -1,9 +1,6 @@
 DC_PATH := $(CURDIR)
 DC_FILE := $(DC_PATH)/docker-compose.yml
 
-PINPOINT_WEB_HOST ?= http://localhost
-PINPOINT_WEB_PORT ?= 8080
-
 clean:
 	rm -f $(DC_PATH)/.env
 
