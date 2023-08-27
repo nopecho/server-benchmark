@@ -402,8 +402,7 @@ Temporary Items
 
 # Mobile Tools for Java (J2ME)
 
-./pinpoint/hbase
-./pinpoint/hbase/**
-./pinpoint/mysql
-./pinpoint/mysql/**
-
+./hbase
+./hbase/**
+./mysql
+./mysql/**

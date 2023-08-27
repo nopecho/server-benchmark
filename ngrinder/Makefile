@@ -1,5 +1,5 @@
 DC_PATH := $(CURDIR)
-DC_FILE := $(DC_PATH)/docker-compose-ngrinder.yml
+DC_FILE := $(DC_PATH)/docker-compose.yml
 
 up:
 	@docker-compose -f $(DC_FILE) up
