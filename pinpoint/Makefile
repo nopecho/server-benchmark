@@ -19,4 +19,7 @@ logs:
 open:
 	./scripts/open.sh
 
+agent-java:
+	cat $(CURDIR)/Dockerfile
+
 default: up
