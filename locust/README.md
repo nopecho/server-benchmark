@@ -20,5 +20,5 @@ make up
 
 * 로컬 환경(http://localhost)에 HTTP GET 요청 부하 생성 환경 만들기
 ```shell
-make get PORT=8080 URL=/hello
+make get PORT=8080 TARGET=/hello
 ```

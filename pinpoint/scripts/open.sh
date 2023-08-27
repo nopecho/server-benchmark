@@ -13,6 +13,5 @@ if [[ $RESPONSE_CODE == 2* ]]; then
 elif [[ $RESPONSE_CODE == 4* ]] || [[ $RESPONSE_CODE == 5* ]]; then
     echo "☠️ pinpoint web server is not running ☠️"
 else
-    # 그 외의 경우, 다른 처리를 여기에 추가할 수 있습니다.
     echo "Received unexpected status code: $RESPONSE_CODE"
 fi

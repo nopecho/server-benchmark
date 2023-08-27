@@ -3,7 +3,7 @@ DC_FILE_GET := $(DC_PATH)/docker-compose-get.yml
 DC_FILE := $(DC_PATH)/docker-compose.yml
 HOST ?= http://host.docker.internal
 PORT ?= 8080
-TARGET ?= /
+host.docker.internal ?= /
 
 clean:
 	rm -f $(DC_PATH)/.env
@@ -25,6 +25,6 @@ logs:
 	@docker-compose -f $(DC_FILE) logs -f
 
 open:
-	open -a "Google Chrome" "http://localhost:8089"
+	./scripts/open.sh
 
-default: up
+default: up open

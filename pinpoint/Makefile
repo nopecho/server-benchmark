@@ -2,7 +2,7 @@ DC_PATH := $(CURDIR)
 DC_FILE := $(DC_PATH)/docker-compose.yml
 
 clean:
-	rm -f $(DC_PATH)/.env
+	rm -f $(DC_PATH)/.env && rm -rf $(CURDIR)/hbase && rm -rf $(CURDIR)/mysql
 
 setup: clean
 	./scripts/setup.sh
@@ -10,7 +10,7 @@ setup: clean
 up: setup
 	@docker-compose -f $(DC_FILE) up -d
 
-down:
+down: clean
 	@docker-compose -f $(DC_FILE) down
 
 logs:
