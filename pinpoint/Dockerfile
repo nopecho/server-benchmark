@@ -10,7 +10,6 @@ ARG PINPOINT_VERSION=2.5.2
 ARG AGENT_PATH=/pinpoint-agent
 ARG PINPOINT_PROFILES_ACTIVE=release
 ARG COLLECTOR_IP=host.docker.internal
-ARG AGENT_DEBUG_LEVEL=INFO
 
 # build app args
 ARG PORT=10000
@@ -22,9 +21,7 @@ COPY --from=pinpoint-agent ${AGENT_PATH} ${AGENT_PATH}
 RUN sed -i "/profiler.collector.ip=/ s/=.*/=${COLLECTOR_IP}/" \
     ${AGENT_PATH}/profiles/${PINPOINT_PROFILES_ACTIVE}/pinpoint.config && \
     sed -i "/profiler.transport.grpc.collector.ip=/ s/=.*/=${COLLECTOR_IP}/" \
-    ${AGENT_PATH}/profiles/${PINPOINT_PROFILES_ACTIVE}/pinpoint.config && \
-    sed -i "/Root level=/ s/=.*/=${AGENT_DEBUG_LEVEL}/" \
-    ${AGENT_PATH}/profiles/${PINPOINT_PROFILES_ACTIVE}/log4j2.xml
+    ${AGENT_PATH}/profiles/${PINPOINT_PROFILES_ACTIVE}/pinpoint.config
 
 COPY ${FROM_JAR} app.jar
 
